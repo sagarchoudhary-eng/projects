@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>day5.2</display-name>
+	<welcome-file-list>
+
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- context params shared between all web pages from the SAME web app , 
+		read only , thread safe -->
+	<context-param>
+		<!-- DB config details via ctx params -->
+		<param-name>drvr_cls</param-name>
+		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>db_url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/test_acts?useSSL=false</param-value>
+	</context-param>
+	<context-param>
+		<param-name>user_nm</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<!-- error page config tag -->
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error_handler.jsp</location>
+	</error-page>
+
+
+</web-app>
